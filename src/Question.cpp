@@ -1,12 +1,12 @@
 #include <string>
 #include "Question.h"
 
-std::string Question::NextLongMultiplication()
+std::string MathsQuizz::Question::NextLongMultiplication()
 {
 	return "Your long multiplication question: ";
 }
 
-std::string Question::NextShortDivision()
+std::string MathsQuizz::Question::NextShortDivision()
 {
 	return "Your short division question: ";
 }

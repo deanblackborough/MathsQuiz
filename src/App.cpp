@@ -13,25 +13,25 @@ int main()
 
 	while (quizz == true)
 	{
-		Question question;
+		MathsQuizz::Question question{};
 			
 		std::cout << "Please choose the question type" << std::endl;
 		std::cout << "--- Enter 1 for Long multiplication:" << std::endl;
 		std::cout << "--- Enter 2 for Short division:" << std::endl;
 		std::cin >> question_type;
 
-		if (question_type == static_cast<int>(Question::QuestionType::LongMultiplication))
+		if (question_type == static_cast<int>(MathsQuizz::Question::QuestionType::LongMultiplication))
 		{
-			question.SetType(Question::QuestionType::LongMultiplication);
+			question.SetType(MathsQuizz::Question::QuestionType::LongMultiplication);
 		}
-		else if (question_type == static_cast<int>(Question::QuestionType::ShortDivison))
+		else if (question_type == static_cast<int>(MathsQuizz::Question::QuestionType::ShortDivison))
 		{
-			question.SetType(Question::QuestionType::ShortDivison);
+			question.SetType(MathsQuizz::Question::QuestionType::ShortDivison);
 		}
 		else
 		{
 			std::cout << "Oops, you selected an option not shown, I'm going to pick an option for you!" << std::endl;
-			question.SetType(Question::QuestionType::LongMultiplication);
+			question.SetType(MathsQuizz::Question::QuestionType::LongMultiplication);
 		}
 
 		// Question
