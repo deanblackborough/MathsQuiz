@@ -5,7 +5,7 @@
 class Question
 {
 public:
-	enum class QuestionType
+	enum QuestionType : int
 	{
 		LongMultiplication = 1, 
 		ShortDivison = 2

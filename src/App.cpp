@@ -20,7 +20,7 @@ int main()
 		std::cout << "--- Enter 2 for Short division:" << std::endl;
 		std::cin >> question_type;
 
-		if (question_type == 1)
+		if (question_type == Question::QuestionType::LongMultiplication)
 		{
 			question.SetType(Question::QuestionType::LongMultiplication);
 		}
