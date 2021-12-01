@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Question.h"
 
 int main()
 {
@@ -12,6 +13,8 @@ int main()
 
 	while (quizz == true)
 	{
+		Question question;
+			
 		std::cout << "Please choose the question type" << std::endl;
 		std::cout << "--- Enter 1 for Long multiplication:" << std::endl;
 		std::cout << "--- Enter 2 for Short division:" << std::endl;
@@ -19,22 +22,21 @@ int main()
 
 		if (question_type == 1)
 		{
-			std::cout << "Your long multiplication question is: " << std::endl;
+			question.SetType(Question::QuestionType::LongMultiplication);
 		}
 		else if (question_type == 2)
 		{
-			std::cout << "Your short division question is: " << std::endl;
+			question.SetType(Question::QuestionType::ShortDivison);
 		}
 		else
 		{
 			std::cout << "Oops, you selected an option not shown, I'm going to pick an option for you!" << std::endl;
-			question_type = 1;
+			question.SetType(Question::QuestionType::LongMultiplication);
 			std::cout << "Your long multiplication question is: " << std::endl;
 		}
 
 		// Question
-
-
+		std::cout << question.NextQuestion() << std::endl;;
 
 		std::cout << "Do you want another question? (y/n)" << std::endl;
 		std::cin >> quit;
