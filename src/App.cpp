@@ -20,11 +20,11 @@ int main()
 		std::cout << "--- Enter 2 for Short division:" << std::endl;
 		std::cin >> question_type;
 
-		if (question_type == Question::QuestionType::LongMultiplication)
+		if (question_type == static_cast<int>(Question::QuestionType::LongMultiplication))
 		{
 			question.SetType(Question::QuestionType::LongMultiplication);
 		}
-		else if (question_type == 2)
+		else if (question_type == static_cast<int>(Question::QuestionType::ShortDivison))
 		{
 			question.SetType(Question::QuestionType::ShortDivison);
 		}
@@ -32,7 +32,6 @@ int main()
 		{
 			std::cout << "Oops, you selected an option not shown, I'm going to pick an option for you!" << std::endl;
 			question.SetType(Question::QuestionType::LongMultiplication);
-			std::cout << "Your long multiplication question is: " << std::endl;
 		}
 
 		// Question
