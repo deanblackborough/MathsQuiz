@@ -16,6 +16,7 @@
     <ProjectGuid>{2c5e2832-2167-4869-bca3-6ae7059ad7a3}</ProjectGuid>
     <RootNamespace>MathsQuizz</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MathsQuiz</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -92,7 +93,7 @@
     <ClInclude Include="src\Question.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MathsQuizz.rc" />
+    <ResourceCompile Include="MathsQuiz.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resource\icon.ico" />

@@ -1,7 +1,7 @@
 #include <string>
 #include "Question.h"
 
-namespace MathsQuizz {
+namespace MathsQuiz {
 
 	std::string Question::NextLongMultiplication()
 	{

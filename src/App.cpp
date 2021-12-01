@@ -7,31 +7,31 @@ int main()
 	int question_type = {};
 	bool quizz = { true };
 
-	std::cout << "Welcome to MathsQuizz" << std::endl;
+	std::cout << "Welcome to MathsQuiz" << std::endl;
 	std::cout << "Time for some maths questions!" << std::endl;
 	std::cout << std::endl;
 
 	while (quizz == true)
 	{
-		MathsQuizz::Question question{};
+		MathsQuiz::Question question{};
 			
 		std::cout << "Please choose the question type" << std::endl;
 		std::cout << "--- Enter 1 for Long multiplication:" << std::endl;
 		std::cout << "--- Enter 2 for Short division:" << std::endl;
 		std::cin >> question_type;
 
-		if (question_type == static_cast<int>(MathsQuizz::Question::QuestionType::LongMultiplication))
+		if (question_type == static_cast<int>(MathsQuiz::Question::QuestionType::LongMultiplication))
 		{
-			question.SetType(MathsQuizz::Question::QuestionType::LongMultiplication);
+			question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
 		}
-		else if (question_type == static_cast<int>(MathsQuizz::Question::QuestionType::ShortDivison))
+		else if (question_type == static_cast<int>(MathsQuiz::Question::QuestionType::ShortDivison))
 		{
-			question.SetType(MathsQuizz::Question::QuestionType::ShortDivison);
+			question.SetType(MathsQuiz::Question::QuestionType::ShortDivison);
 		}
 		else
 		{
 			std::cout << "Oops, you selected an option not shown, I'm going to pick an option for you!" << std::endl;
-			question.SetType(MathsQuizz::Question::QuestionType::LongMultiplication);
+			question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
 		}
 
 		// Question
