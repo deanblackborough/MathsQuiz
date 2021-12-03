@@ -3,68 +3,68 @@
 #include <iostream>
 
 namespace MathsQuiz {
-	
-	class Question
-	{
-	public:
-		enum class QuestionType : int
-		{
-			LongMultiplication = 1,
-			ShortDivison = 2
-		};
+    
+    class Question
+    {
+    public:
+        enum class QuestionType : int
+        {
+            LongMultiplication = 1,
+            ShortDivison = 2
+        };
 
-	private:
-		QuestionType m_QuestionType;
+    private:
+        QuestionType m_QuestionType;
 
-		int m_LongMultiplication[2];
-		int m_ShortDivision[2];
+        int m_LongMultiplication[2];
+        int m_ShortDivision[2];
 
-	public:
-		void SetType(QuestionType questionType)
-		{
-			m_QuestionType = questionType;
-		}
+    public:
+        void SetType(QuestionType questionType)
+        {
+            m_QuestionType = questionType;
+        }
 
-		std::string NextQuestion()
-		{
-			if (m_QuestionType == QuestionType::LongMultiplication)
-			{
-				return NextLongMultiplication();
-			}
-			else
-			{
-				return NextShortDivision();
-			}
-		}
+        std::string NextQuestion()
+        {
+            if (m_QuestionType == QuestionType::LongMultiplication)
+            {
+                return NextLongMultiplication();
+            }
+            else
+            {
+                return NextShortDivision();
+            }
+        }
 
-		void UserAnswer();
+        void UserAnswer();
 
-		std::string Answer()
-		{
-			if (m_QuestionType == QuestionType::LongMultiplication)
-			{
-				return LongMultiplicationAnswer();
-			}
-			else
-			{
-				return ShortDivisionAnswer();
-			}
-		}
+        std::string Answer()
+        {
+            if (m_QuestionType == QuestionType::LongMultiplication)
+            {
+                return LongMultiplicationAnswer();
+            }
+            else
+            {
+                return ShortDivisionAnswer();
+            }
+        }
 
-		std::string Solution();
+        std::string Solution();
 
-	private:
-		std::string NextLongMultiplication();
+    private:
+        std::string NextLongMultiplication();
 
-		std::string NextShortDivision();
+        std::string NextShortDivision();
 
-		std::string LongMultiplicationAnswer();
+        std::string LongMultiplicationAnswer();
 
-		std::string ShortDivisionAnswer();
+        std::string ShortDivisionAnswer();
 
-		int RandomNumber(int min, int max)
-		{
-			return min + (rand() % static_cast<int>(max - min + 1));
-		}
-	};
+        int RandomNumber(int min, int max)
+        {
+            return min + (rand() % static_cast<int>(max - min + 1));
+        }
+    };
 }
