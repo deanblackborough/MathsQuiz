@@ -5,7 +5,7 @@ namespace MathsQuiz {
 
 	std::string Question::NextLongMultiplication()
 	{
-		m_LongMultiplication[0] = RandomNumber(101, 2500);
+		m_LongMultiplication[0] = RandomNumber(101, 5000);
 		m_LongMultiplication[1] = RandomNumber(5, 99);
 
 		std::string output = " Your long multiplication question is\n";
@@ -16,16 +16,13 @@ namespace MathsQuiz {
 
 	std::string Question::NextShortDivision()
 	{
-		m_ShortDivision[0] = RandomNumber(101, 2500);
-		m_ShortDivision[1] = RandomNumber(1, 9);
+		m_ShortDivision[0] = RandomNumber(101, 10000);
+		m_ShortDivision[1] = RandomNumber(3, 9);
 
 		std::string output = " Your short division question is\n";
 		output += " " + std::to_string(m_ShortDivision[0]) + " " + char(246) + " " + std::to_string(m_ShortDivision[1]);
 
 		return output;
-
-
-		return " Your short division question: ";
 	}
 
 	std::string Question::LongMultiplicationAnswer()
