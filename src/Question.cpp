@@ -28,16 +28,23 @@ namespace MathsQuiz {
 		return " Your short division question: ";
 	}
 
-	std::string Question::LongDivisionAnswer()
+	std::string Question::LongMultiplicationAnswer()
 	{
-		std::string output = " The answer is\n";
+		std::string output = " The answer is " + std::to_string(m_LongMultiplication[0] * m_LongMultiplication[1]);
 
 		return output;
 	}
 
 	std::string Question::ShortDivisionAnswer()
 	{
-		std::string output = " The answer is\n";
+		int remainder = m_ShortDivision[0] % m_ShortDivision[1];
+		int answer = (m_ShortDivision[0] - remainder) / m_ShortDivision[1];
+
+		std::string output = " The answer is " + std::to_string(answer);
+		if (remainder > 0) 
+		{
+			output += ", remainder " + std::to_string(remainder);
+		}
 
 		return output;
 	}

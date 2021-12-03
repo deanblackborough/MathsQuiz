@@ -43,7 +43,7 @@ namespace MathsQuiz {
 		{
 			if (m_QuestionType == QuestionType::LongMultiplication)
 			{
-				return LongDivisionAnswer();
+				return LongMultiplicationAnswer();
 			}
 			else
 			{
@@ -58,7 +58,7 @@ namespace MathsQuiz {
 
 		std::string NextShortDivision();
 
-		std::string LongDivisionAnswer();
+		std::string LongMultiplicationAnswer();
 
 		std::string ShortDivisionAnswer();
 

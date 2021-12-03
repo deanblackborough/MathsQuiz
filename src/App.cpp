@@ -20,26 +20,32 @@ int main()
 
 	while (quizz == true)
 	{
-		MathsQuiz::Question question{};
-			
 		std::cout << " Please choose a question type" << std::endl;
 		std::cout << " - Enter 1 for Long multiplication:" << std::endl;
 		std::cout << " - Enter 2 for Short division:" << std::endl;
 		std::cout << " * More options are coming soon(tm)" << std::endl << std::endl;
-		std::cin >> question_type;
 
+		while (
+			!(std::cin >> question_type) || 
+			question_type < 1 || 
+			question_type > 2
+		) {
+			std::cout << "Oops, you selected an option not shown, please try again!";
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		MathsQuiz::Question question{};
+
+		std::cout << question_type << std::endl;
+		
 		if (question_type == static_cast<int>(MathsQuiz::Question::QuestionType::LongMultiplication))
 		{
 			question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
 		}
-		else if (question_type == static_cast<int>(MathsQuiz::Question::QuestionType::ShortDivison))
+		else 
 		{
 			question.SetType(MathsQuiz::Question::QuestionType::ShortDivison);
-		}
-		else
-		{
-			std::cout << " Oops, you selected an option not shown, I'm going to pick an option for you!" << std::endl;
-			question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
 		}
 
 		// Question
