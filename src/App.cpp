@@ -7,17 +7,25 @@ int main()
 	int question_type = {};
 	bool quizz = { true };
 
-	std::cout << "Welcome to MathsQuiz" << std::endl;
-	std::cout << "Time for some maths questions!" << std::endl;
-	std::cout << std::endl;
+	std::cout << R"(
+  __  __    _  _____ _   _ ____     ___  _   _ ___ _____
+ |  \/  |  / \|_   _| | | / ___|   / _ \| | | |_ _|__  /
+ | |\/| | / _ \ | | | |_| \___ \  | | | | | | || |  / / 
+ | |  | |/ ___ \| | |  _  |___) | | |_| | |_| || | / /_ 
+ |_|  |_/_/   \_\_| |_| |_|____/   \__\_\\___/|___/____|
+                                                        
+)";
+
+	std::cout << " Time for some Maths!" << std::endl << std::endl;
 
 	while (quizz == true)
 	{
 		MathsQuiz::Question question{};
 			
-		std::cout << "Please choose the question type" << std::endl;
-		std::cout << "--- Enter 1 for Long multiplication:" << std::endl;
-		std::cout << "--- Enter 2 for Short division:" << std::endl;
+		std::cout << " Please choose a question type" << std::endl;
+		std::cout << " - Enter 1 for Long multiplication:" << std::endl;
+		std::cout << " - Enter 2 for Short division:" << std::endl;
+		std::cout << " * More options are coming soon(tm)" << std::endl << std::endl;
 		std::cin >> question_type;
 
 		if (question_type == static_cast<int>(MathsQuiz::Question::QuestionType::LongMultiplication))
@@ -30,18 +38,19 @@ int main()
 		}
 		else
 		{
-			std::cout << "Oops, you selected an option not shown, I'm going to pick an option for you!" << std::endl;
+			std::cout << " Oops, you selected an option not shown, I'm going to pick an option for you!" << std::endl;
 			question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
 		}
 
 		// Question
-		std::cout << question.NextQuestion() << std::endl;;
+		std::cout << question.NextQuestion() << std::endl << std::endl;
+		std::cout << question.Answer() << std::endl;
 
-		std::cout << "Do you want another question? (y/n)" << std::endl;
+		std::cout << " Do you want another question? (y/n)" << std::endl;
 		std::cin >> quit;
 		if (quit == 'n')
 		{
-			std::cout << "Bye bye!" << std::endl;
+			std::cout << std::endl << " Bye bye!" << std::endl;
 			quizz = false;
 		}
 	}

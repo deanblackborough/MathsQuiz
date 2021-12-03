@@ -39,7 +39,17 @@ namespace MathsQuiz {
 
 		void UserAnswer();
 
-		std::string Answer();
+		std::string Answer()
+		{
+			if (m_QuestionType == QuestionType::LongMultiplication)
+			{
+				return LongDivisionAnswer();
+			}
+			else
+			{
+				return ShortDivisionAnswer();
+			}
+		}
 
 		std::string Solution();
 
@@ -47,5 +57,14 @@ namespace MathsQuiz {
 		std::string NextLongMultiplication();
 
 		std::string NextShortDivision();
+
+		std::string LongDivisionAnswer();
+
+		std::string ShortDivisionAnswer();
+
+		int RandomNumber(int min, int max)
+		{
+			return min + (rand() % static_cast<int>(max - min + 1));
+		}
 	};
 }
