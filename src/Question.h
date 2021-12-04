@@ -19,6 +19,9 @@ namespace MathsQuiz {
         int m_LongMultiplication[2];
         int m_ShortDivision[2];
 
+        int m_LongMultiplicationAnswer;
+        int m_ShortDivisionAnswer[2];
+
     public:
         void SetType(QuestionType questionType)
         {

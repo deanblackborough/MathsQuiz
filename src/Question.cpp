@@ -35,20 +35,22 @@ namespace MathsQuiz {
 
     std::string Question::LongMultiplicationAnswer()
     {
-        std::string output = " The answer is " + std::to_string(m_LongMultiplication[0] * m_LongMultiplication[1]);
+        m_LongMultiplicationAnswer = m_LongMultiplication[0] * m_LongMultiplication[1];
+
+        std::string output = " The answer is " + std::to_string(m_LongMultiplicationAnswer);
 
         return output;
     }
 
     std::string Question::ShortDivisionAnswer()
     {
-        int remainder = m_ShortDivision[0] % m_ShortDivision[1];
-        int answer = (m_ShortDivision[0] - remainder) / m_ShortDivision[1];
+        m_ShortDivisionAnswer[0] = m_ShortDivision[0] % m_ShortDivision[1]; // Remainder
+        m_ShortDivisionAnswer[1] = (m_ShortDivision[0] - m_ShortDivisionAnswer[0]) / m_ShortDivision[1];
 
-        std::string output = " The answer is " + std::to_string(answer);
-        if (remainder > 0) 
+        std::string output = " The answer is " + std::to_string(m_ShortDivisionAnswer[1]);
+        if (m_ShortDivisionAnswer[0] > 0)
         {
-            output += ", remainder " + std::to_string(remainder);
+            output += ", remainder " + std::to_string(m_ShortDivisionAnswer[0]);
         }
 
         return output;

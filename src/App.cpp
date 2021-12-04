@@ -36,9 +36,7 @@ int main()
         }
 
         MathsQuiz::Question question{};
-
-        std::cout << question_type << std::endl;
-        
+                
         if (question_type == static_cast<int>(MathsQuiz::Question::QuestionType::LongMultiplication))
         {
             question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
