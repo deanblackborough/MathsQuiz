@@ -1,4 +1,5 @@
 #include "Question.h"
+
 #include <string>
 #include <vector>
 
@@ -43,7 +44,7 @@ std::string Question::LongMultiplicationAnswer() {
 
 std::string Question::ShortDivisionAnswer() {
   m_ShortDivisionAnswer[0] =
-      m_ShortDivision[0] % m_ShortDivision[1]; // Remainder
+      m_ShortDivision[0] % m_ShortDivision[1];  // Remainder
   m_ShortDivisionAnswer[1] =
       (m_ShortDivision[0] - m_ShortDivisionAnswer[0]) / m_ShortDivision[1];
 
@@ -110,4 +111,4 @@ std::string Question::ShortDivisionSolution() {
   std::string output = "";
   return output;
 }
-} // namespace MathsQuiz
+}  // namespace MathsQuiz

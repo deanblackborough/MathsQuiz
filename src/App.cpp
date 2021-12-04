@@ -1,5 +1,6 @@
-#include "Question.h"
 #include <iostream>
+
+#include "Question.h"
 
 int main() {
   srand(static_cast<int>(std::time(0)));

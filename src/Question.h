@@ -5,10 +5,10 @@
 namespace MathsQuiz {
 
 class Question {
-public:
+ public:
   enum class QuestionType : int { LongMultiplication = 1, ShortDivison = 2 };
 
-private:
+ private:
   QuestionType m_QuestionType;
 
   int m_LongMultiplication[2];
@@ -23,7 +23,7 @@ private:
   int m_LongMultiplicationCorrect;
   int m_ShortDivisionCorrect;
 
-public:
+ public:
   void SetType(QuestionType questionType) { m_QuestionType = questionType; }
 
   std::string NextQuestion() {
@@ -66,7 +66,7 @@ public:
     }
   }
 
-private:
+ private:
   std::string NextLongMultiplication();
 
   std::string NextShortDivision();
@@ -87,4 +87,4 @@ private:
     return min + (rand() % static_cast<int>(max - min + 1));
   }
 };
-} // namespace MathsQuiz
+}  // namespace MathsQuiz
