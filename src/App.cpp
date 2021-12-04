@@ -50,9 +50,6 @@ int main()
         // Question
         std::cout << std::endl << question.NextQuestion() << std::endl;
 
-        // User answer
-        std::cout << " What is the result?" << std::endl;
-
         question.UserAnswer();
 
         if (question.Correct() == 1)
