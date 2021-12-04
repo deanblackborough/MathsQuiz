@@ -55,4 +55,35 @@ namespace MathsQuiz {
 
         return output;
     }
+
+    void Question::LongMultiplicationUserAnswer()
+    {
+        std::cout << " Enter the result of the long multiplication" << std::endl;
+        std::cin >> m_LongMultiplicationUserAnswer;
+
+        m_LongMultiplicationCorrect = 0;
+        if (m_LongMultiplicationAnswer == m_LongMultiplicationUserAnswer)
+        {
+            m_LongMultiplicationCorrect = 1;
+        }
+    }
+
+    void Question::ShortDivisionAnswerUserAnswer()
+    {
+        m_ShortDivisionCorrect = 0;
+
+        std::cout << " Enter the result of the short division" << std::endl;
+        std::cin >> m_ShortDivisionUserAnswer[0];
+        std::cout << " Enter any remainder" << std::endl;
+        std::cin >> m_ShortDivisionUserAnswer[1];
+
+        if (
+            m_ShortDivisionAnswer[0] == m_ShortDivisionUserAnswer[0]
+            &&
+            m_ShortDivisionAnswer[1] == m_ShortDivisionUserAnswer[1]
+        )
+        {
+            m_LongMultiplicationCorrect = 1;
+        }
+    }
 }

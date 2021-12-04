@@ -22,6 +22,12 @@ namespace MathsQuiz {
         int m_LongMultiplicationAnswer;
         int m_ShortDivisionAnswer[2];
 
+        int m_LongMultiplicationUserAnswer;
+        int m_ShortDivisionUserAnswer[2];
+
+        int m_LongMultiplicationCorrect;
+        int m_ShortDivisionCorrect;
+
     public:
         void SetType(QuestionType questionType)
         {
@@ -40,7 +46,17 @@ namespace MathsQuiz {
             }
         }
 
-        void UserAnswer();
+        void UserAnswer()
+        {
+            if (m_QuestionType == QuestionType::LongMultiplication)
+            {
+                LongMultiplicationUserAnswer();
+            }
+            else
+            {
+                ShortDivisionAnswerUserAnswer();
+            }
+        }
 
         std::string Answer()
         {
@@ -51,6 +67,18 @@ namespace MathsQuiz {
             else
             {
                 return ShortDivisionAnswer();
+            }
+        }
+
+        int Correct()
+        {
+            if (m_QuestionType == QuestionType::LongMultiplication)
+            {
+                return m_LongMultiplicationCorrect;
+            }
+            else
+            {
+                return m_ShortDivisionCorrect;
             }
         }
 
@@ -65,8 +93,13 @@ namespace MathsQuiz {
 
         std::string ShortDivisionAnswer();
 
+        void LongMultiplicationUserAnswer();
+
+        void ShortDivisionAnswerUserAnswer();
+
         int RandomNumber(int min, int max)
         {
+            srand(time(NULL));
             return min + (rand() % static_cast<int>(max - min + 1));
         }
     };

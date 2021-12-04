@@ -3,8 +3,9 @@
 
 int main()
 {
+    char showSolution = {};
     char quit = {};
-    int question_type = {};
+    int questionType = {};
     bool quizz = { true };
 
     std::cout << R"(
@@ -26,18 +27,18 @@ int main()
         std::cout << " * More options are coming soon(tm)" << std::endl << std::endl;
 
         while (
-            !(std::cin >> question_type) || 
-            question_type < 1 || 
-            question_type > 2
+            !(std::cin >> questionType) || 
+            questionType < 1 || 
+            questionType > 2
         ) {
-            std::cout << "Oops, you selected an option not shown, please try again!" << std::endl;
+            std::cout << " Oops, you selected an option not shown, please try again!" << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
 
         MathsQuiz::Question question{};
                 
-        if (question_type == static_cast<int>(MathsQuiz::Question::QuestionType::LongMultiplication))
+        if (questionType == static_cast<int>(MathsQuiz::Question::QuestionType::LongMultiplication))
         {
             question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
         }
@@ -47,8 +48,29 @@ int main()
         }
 
         // Question
-        std::cout << std::endl << question.NextQuestion() << std::endl << std::endl;
-        std::cout << question.Answer() << std::endl;
+        std::cout << std::endl << question.NextQuestion() << std::endl;
+
+        // User answer
+        std::cout << " What is the result?" << std::endl;
+
+        question.UserAnswer();
+
+        if (question.Correct() == 1)
+        {
+            std::cout << " Well done, you got that right!" << std::endl;
+        }
+        else
+        {
+            std::cout << " Nice try but not quite!" << std::endl << std::endl;
+            std::cout << question.Answer() << std::endl;
+
+            std::cout << " Would you like to see the solution? (y/N)" << std::endl;
+            std::cin >> showSolution;
+            if (showSolution == 'y')
+            {
+                std::cout << " [SHOW THE SOLUTION HERE]" << std::endl;
+            }
+        }
 
         std::cout << " Do you want another question? (Y/n)" << std::endl;
         std::cin >> quit;
