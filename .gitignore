@@ -1,7 +1,7 @@
 [Bb]in/
 
 *.aps
+*.vs/
 
-.vs/
 **.vcxproj.filters
 **.vcxproj.user
