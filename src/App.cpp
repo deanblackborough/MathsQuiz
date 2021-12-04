@@ -72,7 +72,7 @@ int main()
             }
         }
 
-        std::cout << " Do you want another question? (Y/n)" << std::endl;
+        std::cout << std::endl << " Do you want another question? (Y/n)" << std::endl;
         std::cin >> quit;
         if (quit == 'n')
         {
