@@ -13,7 +13,7 @@ jobs:
         source: './src'
         exclude: './lib'
         extensions: 'h,cpp,c'
-        clangFormatVersion: 9
+        clangFormatVersion: 12
         style: chromium
         inplace: True
     - uses: EndBug/add-and-commit@v4
