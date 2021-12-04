@@ -82,7 +82,17 @@ namespace MathsQuiz {
             }
         }
 
-        std::string Solution();
+        std::string Solution()
+        {
+            if (m_QuestionType == QuestionType::LongMultiplication)
+            {
+                return LongMultiplicationSolution();
+            }
+            else
+            {
+                return ShortDivisionSolution();
+            }
+        }
 
     private:
         std::string NextLongMultiplication();
@@ -93,13 +103,16 @@ namespace MathsQuiz {
 
         std::string ShortDivisionAnswer();
 
+        std::string LongMultiplicationSolution();
+
+        std::string ShortDivisionSolution();
+
         void LongMultiplicationUserAnswer();
 
         void ShortDivisionAnswerUserAnswer();
 
         int RandomNumber(int min, int max)
         {
-            srand(time(NULL));
             return min + (rand() % static_cast<int>(max - min + 1));
         }
     };

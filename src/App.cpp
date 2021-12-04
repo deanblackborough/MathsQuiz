@@ -3,6 +3,7 @@
 
 int main()
 {
+    srand(static_cast<int>(std::time(0)));
     char showSolution = {};
     char quit = {};
     int questionType = {};

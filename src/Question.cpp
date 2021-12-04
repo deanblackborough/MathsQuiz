@@ -1,5 +1,6 @@
 #include <string>
 #include "Question.h"
+#include <vector>
 
 namespace MathsQuiz {
 
@@ -8,10 +9,10 @@ namespace MathsQuiz {
         m_LongMultiplication[0] = RandomNumber(101, 5000);
         m_LongMultiplication[1] = RandomNumber(5, 99);
 
-        std::string spacing (
+        std::string spacing(
             static_cast<size_t>(
                 std::to_string(m_LongMultiplication[0]).length() - std::to_string(m_LongMultiplication[1]).length()
-            ), 
+                ),
             ' '
         );
 
@@ -81,9 +82,43 @@ namespace MathsQuiz {
             m_ShortDivisionAnswer[0] == m_ShortDivisionUserAnswer[0]
             &&
             m_ShortDivisionAnswer[1] == m_ShortDivisionUserAnswer[1]
-        )
+            )
         {
             m_LongMultiplicationCorrect = 1;
         }
+    }
+
+    std::string Question::LongMultiplicationSolution()
+    {
+        int TopLength = static_cast<int>(std::to_string(m_LongMultiplication[0]).length());
+        int BottomLength = static_cast<int>(std::to_string(m_LongMultiplication[1]).length());
+
+        std::vector<int> BitsTop;
+        std::vector<int> BitsBottom;
+
+        while (m_LongMultiplication[0] > 0)
+        {
+            int digit = m_LongMultiplication[0] % 10;
+            m_LongMultiplication[0] /= 10;
+            BitsTop.push_back(digit);
+        }
+
+        while (m_LongMultiplication[1] > 0)
+        {
+            int digit = m_LongMultiplication[1] % 10;
+            m_LongMultiplication[1] /= 10;
+            BitsBottom.push_back(digit);
+
+
+            std::string output = "";
+
+            return output;
+        }
+    }
+
+    std::string Question::ShortDivisionSolution()
+    {
+        std::string output = "";
+        return output;
     }
 }
