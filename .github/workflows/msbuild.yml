@@ -20,7 +20,7 @@ jobs:
     
     - name: Premake5
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: vendor/premake5/premake.exe vs2019
+      run: vendor/premake5/premake5.exe vs2019
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
