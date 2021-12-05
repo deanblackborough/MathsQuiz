@@ -20,41 +20,43 @@ int main()
 )";
 
     std::cout << " Time for some Maths!" << std::endl
-              << std::endl;
+        << std::endl;
 
     while (quizz == true) {
         std::cout << " Please choose a question type" << std::endl;
         std::cout << " - Enter 1 for Long multiplication:" << std::endl;
         std::cout << " - Enter 2 for Short division:" << std::endl;
         std::cout << " * More options are coming soon(tm)" << std::endl
-                  << std::endl;
+            << std::endl;
 
         while (!(std::cin >> questionType) || questionType < 1 || questionType > 2) {
             std::cout << " Oops, you selected an option not shown, please try again!"
-                      << std::endl;
+                << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
 
-        MathsQuiz::Question question {};
+        MathsQuiz::Question question{};
 
         if (questionType == static_cast<int>(MathsQuiz::Question::QuestionType::LongMultiplication)) {
             question.SetType(MathsQuiz::Question::QuestionType::LongMultiplication);
-        } else {
+        }
+        else {
             question.SetType(MathsQuiz::Question::QuestionType::ShortDivison);
         }
 
         // Question
         std::cout << std::endl
-                  << question.NextQuestion() << std::endl;
+            << question.NextQuestion() << std::endl;
 
         question.UserAnswer();
 
         if (question.Correct() == 1) {
             std::cout << " Well done, you got that right!" << std::endl;
-        } else {
+        }
+        else {
             std::cout << " Nice try but not quite!" << std::endl
-                      << std::endl;
+                << std::endl;
             std::cout << question.Answer() << std::endl;
 
             std::cout << " Would you like to see the solution? (y/N)" << std::endl;
@@ -65,11 +67,11 @@ int main()
         }
 
         std::cout << std::endl
-                  << " Do you want another question? (Y/n)" << std::endl;
+            << " Do you want another question? (Y/n)" << std::endl;
         std::cin >> quit;
         if (quit == 'n') {
             std::cout << std::endl
-                      << " Bye bye!" << std::endl;
+                << " Bye bye!" << std::endl;
             quizz = false;
         }
     }
