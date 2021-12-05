@@ -6,3 +6,8 @@
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
+
+DerivedData/
+.DS_Store
+MathsQuiz.xcodeproj/
+MathsQuiz.xcworkspace/
