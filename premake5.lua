@@ -1,5 +1,7 @@
 workspace "MathsQuiz"
     architecture "x64"
+    language "C++"
+	cppdialect "C++20"
 
     configurations
     {
@@ -16,7 +18,6 @@ project "MathsQuiz"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin/intermediates/" .. outputdir .. "/%{prj.name}")
-    buildoptions { "-std=c++11" }
 
     files
     {
