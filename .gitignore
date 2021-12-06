@@ -3,10 +3,15 @@
 *.aps
 *.vs/
 
+# Visual studio ignores
+*.sln
+*.rc
+
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
 
+# XCode ignores
 DerivedData/
 .DS_Store
 MathsQuiz.xcodeproj/

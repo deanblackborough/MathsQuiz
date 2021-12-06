@@ -16,6 +16,7 @@ project "MathsQuiz"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin/intermediates/" .. outputdir .. "/%{prj.name}")
+    buildoptions { "-std=c++11" }
 
     files
     {

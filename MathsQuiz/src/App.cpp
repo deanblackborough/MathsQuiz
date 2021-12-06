@@ -4,7 +4,7 @@
 
 int main()
 {
-    srand(static_cast<int>(std::time(0)));
+    srand(static_cast<int>(time(0)));
     char showSolution = {};
     char quit = {};
     int questionType = {};
@@ -15,23 +15,18 @@ int main()
  |  \/  |  / \|_   _| | | / ___|   / _ \| | | |_ _|__  /
  | |\/| | / _ \ | | | |_| \___ \  | | | | | | || |  / / 
  | |  | |/ ___ \| | |  _  |___) | | |_| | |_| || | / /_ 
- |_|  |_/_/   \_\_| |_| |_|____/   \__\_\\___/|___/____|
-                                                        
-)";
+ |_|  |_/_/   \_\_| |_| |_|____/   \__\_\\___/|___/____|)";
 
-    std::cout << " Time for some Maths!" << std::endl
-        << std::endl;
+    std::cout << " Time for some Maths!" << std::endl << std::endl;
 
     while (quizz == true) {
         std::cout << " Please choose a question type" << std::endl;
         std::cout << " - Enter 1 for Long multiplication:" << std::endl;
         std::cout << " - Enter 2 for Short division:" << std::endl;
-        std::cout << " * More options are coming soon(tm)" << std::endl
-            << std::endl;
+        std::cout << " * More options are coming soon(tm)" << std::endl << std::endl;
 
         while (!(std::cin >> questionType) || questionType < 1 || questionType > 2) {
-            std::cout << " Oops, you selected an option not shown, please try again!"
-                << std::endl;
+            std::cout << " Oops, you selected an option not shown, please try again!" << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
@@ -46,8 +41,7 @@ int main()
         }
 
         // Question
-        std::cout << std::endl
-            << question.NextQuestion() << std::endl;
+        std::cout << std::endl << question.NextQuestion() << std::endl;
 
         question.UserAnswer();
 
@@ -55,8 +49,7 @@ int main()
             std::cout << " Well done, you got that right!" << std::endl;
         }
         else {
-            std::cout << " Nice try but not quite!" << std::endl
-                << std::endl;
+            std::cout << " Nice try but not quite!" << std::endl << std::endl;
             std::cout << question.Answer() << std::endl;
 
             std::cout << " Would you like to see the solution? (y/N)" << std::endl;
@@ -66,12 +59,10 @@ int main()
             }
         }
 
-        std::cout << std::endl
-            << " Do you want another question? (Y/n)" << std::endl;
+        std::cout << std::endl << " Do you want another question? (Y/n)" << std::endl;
         std::cin >> quit;
         if (quit == 'n') {
-            std::cout << std::endl
-                << " Bye bye!" << std::endl;
+            std::cout << std::endl << " Bye bye!" << std::endl;
             quizz = false;
         }
     }
